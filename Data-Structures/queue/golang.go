@@ -44,15 +44,15 @@ func (q *Queue) dequeue() interface{} {
 	if len(q.items) == 0 {
 		return nil
 	} else {
-		lastValue := q.items[len(q.items) - 1]
-		q.items = q.items[:len(q.items) - 1]
+		lastValue := q.items[0]
+		q.items = q.items[1:len(q.items)]
 		return lastValue
 	}
 }
 
 func (q *Queue) print() string {
 	text := []string{}
-	for i := range q.items  {
+	for i := range q.items {
 		temText := strconv.Itoa(q.items[i])
 		text = append(text, temText)
 	}
@@ -66,6 +66,3 @@ func (q *Queue) front() interface{} {
 		return q.items[0]
 	}
 }
-
-
-

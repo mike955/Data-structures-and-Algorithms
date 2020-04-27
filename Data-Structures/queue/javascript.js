@@ -26,7 +26,7 @@
    }
 
    dequeue() {
-    return this.items.length == 0 ? null : this.items.pop()
+    return this.items.length == 0 ? null : this.items.shift()
    }
 
    print() {
